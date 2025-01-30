@@ -15,9 +15,13 @@ class CFG:
         """Parse a list of blocks to generate the CFG"""
         label_to_block_index = {}
         successors = {}
+
+        # Generate label map
         for i, block in enumerate(blocks):
             if "label" in block[0]:
                 label_to_block_index[block[0]["label"]] = i
+
+        # Find successors
         for i, block in enumerate(blocks):
             terminator = block[-1]
             if "op" not in terminator:
@@ -31,6 +35,7 @@ class CFG:
                     successors[i] = [label_to_block_index[l] for l in terminator["labels"]]
                 else:
                     successors[i] = [i+1]
+
         return cls(blocks, successors)
 
     def __repr__(self) -> str:
