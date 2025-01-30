@@ -1,0 +1,11 @@
+main
+Block 0:
+	instrs: [{'dest': 'v', 'op': 'const', 'type': 'int', 'value': 4}, {'dest': 'b', 'op': 'const', 'type': 'bool', 'value': False}, {'args': ['b'], 'labels': ['there', 'here'], 'op': 'br'}]
+	successors: [2, 1]
+Block 1:
+	instrs: [{'label': 'here'}, {'dest': 'v', 'op': 'const', 'type': 'int', 'value': 2}]
+	successors: [2]
+Block 2:
+	instrs: [{'label': 'there'}, {'args': ['v'], 'op': 'print'}]
+	successors: [3]
+

@@ -1,0 +1,11 @@
+main
+Block 0:
+	instrs: [{'dest': 'v', 'op': 'const', 'type': 'int', 'value': 4}, {'labels': ['somewhere'], 'op': 'jmp'}]
+	successors: [2]
+Block 1:
+	instrs: [{'dest': 'v', 'op': 'const', 'type': 'int', 'value': 2}]
+	successors: [2]
+Block 2:
+	instrs: [{'label': 'somewhere'}, {'args': ['v'], 'op': 'print'}]
+	successors: [3]
+

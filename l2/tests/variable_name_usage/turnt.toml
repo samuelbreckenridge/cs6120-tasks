@@ -1,0 +1,1 @@
+command = "bril2json < {filename} | python ../../variable_name_usage.py"
